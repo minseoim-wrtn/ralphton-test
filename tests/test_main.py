@@ -17,18 +17,10 @@ MOCK_METADATA = {
     "cost": {"api_price_per_million_tokens": "N/A", "hosting_cost_estimate": "N/A"},
 }
 
-MOCK_ANALYSIS = {
-    "summary": "A new 7B model.",
-    "differentiation_points": ["Open source"],
-    "b2b_assessment": {"pros": ["Free"], "warnings": ["Small"]},
-    "takeaway": "Good for testing.",
-}
-
 
 class TestRun:
     @patch("hf_model_monitor.main.send_to_slack", return_value=True)
     @patch("hf_model_monitor.main.format_report", return_value="report text")
-    @patch("hf_model_monitor.main.analyze_model", return_value=MOCK_ANALYSIS)
     @patch("hf_model_monitor.main.collect_model_metadata", return_value=MOCK_METADATA)
     @patch("hf_model_monitor.main.get_reference_data", return_value={"GPT-4o": {}})
     @patch("hf_model_monitor.main.save_current_models")
@@ -37,14 +29,13 @@ class TestRun:
     @patch("hf_model_monitor.main.fetch_trending_models", return_value=MOCK_TRENDING)
     def test_full_pipeline_with_new_model(self, mock_fetch, mock_load, mock_detect,
                                           mock_save, mock_ref, mock_collect,
-                                          mock_analyze, mock_format, mock_send):
+                                          mock_format, mock_send):
         result = run()
 
         assert result["new_models_found"] == 1
         assert result["reports_sent"] == 1
         assert result["errors"] == []
         mock_collect.assert_called_once()
-        mock_analyze.assert_called_once()
         mock_send.assert_called_once_with("report text")
         mock_save.assert_called_once()
 
@@ -69,7 +60,6 @@ class TestRun:
 
     @patch("hf_model_monitor.main.send_to_slack", return_value=True)
     @patch("hf_model_monitor.main.format_report", return_value="report")
-    @patch("hf_model_monitor.main.analyze_model", return_value=MOCK_ANALYSIS)
     @patch("hf_model_monitor.main.collect_model_metadata", side_effect=[Exception("API fail"), MOCK_METADATA])
     @patch("hf_model_monitor.main.get_reference_data", return_value={"GPT-4o": {}})
     @patch("hf_model_monitor.main.save_current_models")
@@ -78,7 +68,7 @@ class TestRun:
     @patch("hf_model_monitor.main.fetch_trending_models", return_value=MOCK_TRENDING)
     def test_error_in_one_model_continues(self, mock_fetch, mock_load, mock_detect,
                                            mock_save, mock_ref, mock_collect,
-                                           mock_analyze, mock_format, mock_send):
+                                           mock_format, mock_send):
         result = run()
 
         assert result["new_models_found"] == 2

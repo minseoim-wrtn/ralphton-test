@@ -5,7 +5,6 @@ from .hf_fetcher import fetch_trending_models
 from .metadata_collector import collect_model_metadata
 from .reference_models import get_reference_data
 from .state import detect_new_models, load_previous_models, save_current_models
-from .analyzer import analyze_model
 from .slack_notifier import format_report, send_to_slack
 
 logging.basicConfig(
@@ -43,8 +42,7 @@ def run() -> dict:
         try:
             logger.info("Processing model: %s", model_id)
             metadata = collect_model_metadata(model_id, trending_data=model)
-            analysis = analyze_model(metadata, reference_data)
-            report = format_report(metadata, analysis, reference_data)
+            report = format_report(metadata, reference_data)
 
             if send_to_slack(report):
                 result["reports_sent"] += 1

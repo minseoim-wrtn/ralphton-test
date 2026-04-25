@@ -1,6 +1,5 @@
 import os
 
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 SLACK_WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL", "")
 
 SEEN_MODELS_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "seen_models.json")

@@ -12,13 +12,6 @@ SAMPLE_METADATA = {
     "cost": {"api_price_per_million_tokens": "N/A", "hosting_cost_estimate": "N/A"},
 }
 
-SAMPLE_ANALYSIS = {
-    "summary": "TestModel is strong for coding tasks.",
-    "differentiation_points": ["Open source"],
-    "b2b_assessment": {"pros": ["Free license"], "warnings": ["Small model"]},
-    "takeaway": "Good for POC.",
-}
-
 SAMPLE_REFERENCE = {
     "GPT-4o": {"params": "N/A", "mmlu": "88.7", "humaneval": "90.2", "license": "Proprietary", "api_price": "$2.50", "context_window": "128K", "vram": "N/A"},
     "Llama-3.1-405B": {"params": "405B", "mmlu": "87.3", "humaneval": "61.0", "license": "Llama 3.1", "api_price": "$0.90", "context_window": "128K", "vram": "~800GB FP16"},
@@ -27,11 +20,11 @@ SAMPLE_REFERENCE = {
 
 class TestFormatReport:
     def test_contains_model_name(self):
-        report = format_report(SAMPLE_METADATA, SAMPLE_ANALYSIS, SAMPLE_REFERENCE)
+        report = format_report(SAMPLE_METADATA, SAMPLE_REFERENCE)
         assert "TestModel" in report
 
     def test_contains_comparison_table(self):
-        report = format_report(SAMPLE_METADATA, SAMPLE_ANALYSIS, SAMPLE_REFERENCE)
+        report = format_report(SAMPLE_METADATA, SAMPLE_REFERENCE)
         assert "Params" in report
         assert "MMLU" in report
         assert "HumanEval" in report
@@ -41,22 +34,14 @@ class TestFormatReport:
         assert "VRAM" in report
 
     def test_contains_reference_models(self):
-        report = format_report(SAMPLE_METADATA, SAMPLE_ANALYSIS, SAMPLE_REFERENCE)
+        report = format_report(SAMPLE_METADATA, SAMPLE_REFERENCE)
         assert "GPT-4o" in report
         assert "Llama-3.1-405B" in report
 
-    def test_contains_b2b_assessment(self):
-        report = format_report(SAMPLE_METADATA, SAMPLE_ANALYSIS, SAMPLE_REFERENCE)
-        assert "Free license" in report
-        assert "Small model" in report
-
-    def test_contains_takeaway(self):
-        report = format_report(SAMPLE_METADATA, SAMPLE_ANALYSIS, SAMPLE_REFERENCE)
-        assert "Good for POC" in report
-
-    def test_contains_summary(self):
-        report = format_report(SAMPLE_METADATA, SAMPLE_ANALYSIS, SAMPLE_REFERENCE)
-        assert "strong for coding" in report
+    def test_contains_license_and_community(self):
+        report = format_report(SAMPLE_METADATA, SAMPLE_REFERENCE)
+        assert "apache-2.0" in report
+        assert "5,000" in report
 
 
 class TestSendToSlack:

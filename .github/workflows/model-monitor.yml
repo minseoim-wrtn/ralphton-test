@@ -24,7 +24,6 @@ jobs:
 
       - name: Run model monitor
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: python -m hf_model_monitor.main
 
