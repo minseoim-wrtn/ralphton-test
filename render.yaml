@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: hf-model-monitor
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn "hf_model_monitor.dashboard:create_app()" --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+      - key: SLACK_WEBHOOK_URL
+        sync: false

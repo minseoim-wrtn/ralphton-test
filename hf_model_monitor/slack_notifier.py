@@ -426,13 +426,15 @@ def _build_hf_url(model_metadata: dict) -> str:
     Tries ``basic.model_id`` first (full ``org/name``), then falls back to
     combining ``basic.org`` and ``basic.name``.
     """
+    model_id = model_metadata.get("model_id", "")
     basic = model_metadata.get("basic", {})
-    model_id = basic.get("model_id", "")
+    if not model_id:
+        model_id = basic.get("model_id", "")
     if model_id:
         return f"https://huggingface.co/{model_id}"
 
-    org = basic.get("org", "")
-    name = basic.get("name", "")
+    org = basic.get("org", "") or model_metadata.get("org", "")
+    name = basic.get("name", "") or model_metadata.get("name", "")
     if org and org != "N/A" and name and name != "Unknown":
         return f"https://huggingface.co/{org}/{name}"
     if name and name != "Unknown":
