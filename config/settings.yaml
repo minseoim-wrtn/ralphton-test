@@ -20,6 +20,7 @@ watched_organizations:
 polling_interval_hours: 12
 run_on_startup: true
 slack_webhook_url: ''
+dashboard_base_url: 'https://ralphton-test.onrender.com'
 trending_thresholds:
   enabled: false
   download_surge_count: 10000
