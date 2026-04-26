@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "description": "Pre-populated historical model data for dashboard comparison and archive browsing. Each entry follows the single fixed schema used by the metadata collector. Fields not available are set to 'N/A' per project convention.",
-  "last_updated": "2026-04-26",
+  "last_updated": "2026-04-27",
   "models": [
     {
       "model_id": "openai/gpt-4o",
@@ -1429,6 +1429,567 @@
         "hf_repo_id": "ai21labs/AI21-Jamba-1.5-Large",
         "api_providers": ["AI21 API", "Azure AI"],
         "website": "https://ai21.com"
+      }
+    },
+    {
+      "model_id": "Qwen/Qwen3.5-9B",
+      "name": "Qwen3.5-9B",
+      "author": "Qwen",
+      "release_date": "2026-02-27",
+      "category": "vlm",
+      "source": "seed",
+      "basic": {
+        "name": "Qwen3.5-9B",
+        "org": "Qwen",
+        "params": "9.7B",
+        "architecture": "Qwen3.5 (Transformer)",
+        "license": "Apache-2.0"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~20GB (FP16)",
+        "quantization_options": "GPTQ, AWQ, GGUF",
+        "api_available": "N/A",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 7163295,
+        "likes": 1348,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$0.5/hr (1xA100 40GB)"
+      },
+      "provider": {
+        "name": "Alibaba Qwen",
+        "hf_repo_id": "Qwen/Qwen3.5-9B",
+        "api_providers": ["DashScope", "Together AI"],
+        "website": "https://qwenlm.github.io"
+      }
+    },
+    {
+      "model_id": "google/gemma-4-31B-it",
+      "name": "Gemma 4 31B Instruct",
+      "author": "google",
+      "release_date": "2026-03-11",
+      "category": "vlm",
+      "source": "seed",
+      "basic": {
+        "name": "Gemma 4 31B Instruct",
+        "org": "google",
+        "params": "32.7B",
+        "architecture": "Gemma 4 (Transformer)",
+        "license": "Apache-2.0"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~65GB (FP16)",
+        "quantization_options": "GPTQ, AWQ, NVFP4",
+        "api_available": "Google AI Studio, Vertex AI",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 6042134,
+        "likes": 2376,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$1/hr (1xA100 80GB)"
+      },
+      "provider": {
+        "name": "Google",
+        "hf_repo_id": "google/gemma-4-31B-it",
+        "api_providers": ["Google AI Studio", "Vertex AI", "Azure AI"],
+        "website": "https://ai.google.dev/gemma"
+      }
+    },
+    {
+      "model_id": "google/gemma-4-26B-A4B-it",
+      "name": "Gemma 4 26B-A4B Instruct",
+      "author": "google",
+      "release_date": "2026-03-11",
+      "category": "vlm",
+      "source": "seed",
+      "basic": {
+        "name": "Gemma 4 26B-A4B Instruct",
+        "org": "google",
+        "params": "26.5B",
+        "architecture": "Gemma 4 (MoE, 4B active)",
+        "license": "Apache-2.0"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~12GB (FP16, 4B active)",
+        "quantization_options": "GPTQ, AWQ, NVFP4",
+        "api_available": "Google AI Studio, Vertex AI",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 4502579,
+        "likes": 815,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$0.5/hr (1xA100 40GB)"
+      },
+      "provider": {
+        "name": "Google",
+        "hf_repo_id": "google/gemma-4-26B-A4B-it",
+        "api_providers": ["Google AI Studio", "Vertex AI"],
+        "website": "https://ai.google.dev/gemma"
+      }
+    },
+    {
+      "model_id": "google/gemma-4-E4B-it",
+      "name": "Gemma 4 E4B Instruct",
+      "author": "google",
+      "release_date": "2026-03-02",
+      "category": "multimodal",
+      "source": "seed",
+      "basic": {
+        "name": "Gemma 4 E4B Instruct",
+        "org": "google",
+        "params": "8.0B",
+        "architecture": "Gemma 4 (Any-to-Any)",
+        "license": "Apache-2.0"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~16GB (FP16)",
+        "quantization_options": "GPTQ, AWQ",
+        "api_available": "Google AI Studio, Vertex AI",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 3687101,
+        "likes": 827,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$0.5/hr (1xA100 40GB)"
+      },
+      "provider": {
+        "name": "Google",
+        "hf_repo_id": "google/gemma-4-E4B-it",
+        "api_providers": ["Google AI Studio", "Vertex AI"],
+        "website": "https://ai.google.dev/gemma"
+      }
+    },
+    {
+      "model_id": "google/gemma-4-E2B-it",
+      "name": "Gemma 4 E2B Instruct",
+      "author": "google",
+      "release_date": "2026-03-02",
+      "category": "multimodal",
+      "source": "seed",
+      "basic": {
+        "name": "Gemma 4 E2B Instruct",
+        "org": "google",
+        "params": "5.1B",
+        "architecture": "Gemma 4 (Any-to-Any)",
+        "license": "Apache-2.0"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~10GB (FP16)",
+        "quantization_options": "GPTQ, AWQ",
+        "api_available": "Google AI Studio, Vertex AI",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 2565564,
+        "likes": 531,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$0.3/hr (1xT4)"
+      },
+      "provider": {
+        "name": "Google",
+        "hf_repo_id": "google/gemma-4-E2B-it",
+        "api_providers": ["Google AI Studio", "Vertex AI"],
+        "website": "https://ai.google.dev/gemma"
+      }
+    },
+    {
+      "model_id": "nvidia/Gemma-4-31B-IT-NVFP4",
+      "name": "Gemma 4 31B IT NVFP4",
+      "author": "nvidia",
+      "release_date": "2026-04-02",
+      "category": "vlm",
+      "source": "seed",
+      "basic": {
+        "name": "Gemma 4 31B IT NVFP4",
+        "org": "nvidia",
+        "params": "20.9B (quantized from 32.7B)",
+        "architecture": "Gemma 4 (NVFP4 Quantized)",
+        "license": "Other"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "No"
+      },
+      "deployment": {
+        "vram_estimate": "~24GB (NVFP4)",
+        "quantization_options": "NVFP4",
+        "api_available": "NVIDIA NIM",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 1747290,
+        "likes": 427,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$0.5/hr (1xA100 40GB)"
+      },
+      "provider": {
+        "name": "NVIDIA",
+        "hf_repo_id": "nvidia/Gemma-4-31B-IT-NVFP4",
+        "api_providers": ["NVIDIA NIM"],
+        "website": "https://nvidia.com/nim"
+      }
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-OCR-2",
+      "name": "DeepSeek OCR 2",
+      "author": "deepseek-ai",
+      "release_date": "2026-01-27",
+      "category": "vlm",
+      "source": "seed",
+      "basic": {
+        "name": "DeepSeek OCR 2",
+        "org": "deepseek-ai",
+        "params": "3.4B",
+        "architecture": "DeepSeek VL v2",
+        "license": "Apache-2.0"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "N/A",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~8GB (FP16)",
+        "quantization_options": "N/A",
+        "api_available": "DeepSeek API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 1476224,
+        "likes": 929,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$0.3/hr (1xT4)"
+      },
+      "provider": {
+        "name": "DeepSeek",
+        "hf_repo_id": "deepseek-ai/DeepSeek-OCR-2",
+        "api_providers": ["DeepSeek API"],
+        "website": "https://deepseek.com"
+      }
+    },
+    {
+      "model_id": "nvidia/Kimi-K2.5-NVFP4",
+      "name": "Kimi K2.5 NVFP4",
+      "author": "nvidia",
+      "release_date": "2026-01-30",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Kimi K2.5 NVFP4",
+        "org": "nvidia",
+        "params": "N/A (quantized)",
+        "architecture": "Kimi K2.5 (NVFP4 Quantized)",
+        "license": "Other"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "N/A",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "No"
+      },
+      "deployment": {
+        "vram_estimate": "N/A",
+        "quantization_options": "NVFP4",
+        "api_available": "NVIDIA NIM",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 1303095,
+        "likes": 79,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "N/A"
+      },
+      "provider": {
+        "name": "NVIDIA",
+        "hf_repo_id": "nvidia/Kimi-K2.5-NVFP4",
+        "api_providers": ["NVIDIA NIM", "Moonshot AI"],
+        "website": "https://nvidia.com/nim"
+      }
+    },
+    {
+      "model_id": "mistralai/Voxtral-Mini-4B-Realtime-2602",
+      "name": "Voxtral Mini 4B Realtime",
+      "author": "mistralai",
+      "release_date": "2026-01-21",
+      "category": "audio",
+      "source": "seed",
+      "basic": {
+        "name": "Voxtral Mini 4B Realtime",
+        "org": "mistralai",
+        "params": "4.4B",
+        "architecture": "Voxtral Realtime (ASR)",
+        "license": "Apache-2.0"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "N/A",
+        "output_window": "N/A",
+        "multilingual": "Yes (en, fr, es, de, ru)",
+        "fine_tuning_support": "N/A"
+      },
+      "deployment": {
+        "vram_estimate": "~10GB (FP16)",
+        "quantization_options": "N/A",
+        "api_available": "Mistral API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 1076144,
+        "likes": 831,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$0.3/hr (1xT4)"
+      },
+      "provider": {
+        "name": "Mistral AI",
+        "hf_repo_id": "mistralai/Voxtral-Mini-4B-Realtime-2602",
+        "api_providers": ["Mistral API"],
+        "website": "https://mistral.ai"
+      }
+    },
+    {
+      "model_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
+      "name": "Nemotron 3 Super 120B-A12B",
+      "author": "nvidia",
+      "release_date": "2026-03-10",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Nemotron 3 Super 120B-A12B",
+        "org": "nvidia",
+        "params": "67.2B (quantized, 12B active)",
+        "architecture": "Nemotron H (Latent MoE)",
+        "license": "Other"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "N/A",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "No"
+      },
+      "deployment": {
+        "vram_estimate": "~80GB (NVFP4)",
+        "quantization_options": "NVFP4",
+        "api_available": "NVIDIA NIM",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 1004088,
+        "likes": 279,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$2/hr (1xA100 80GB)"
+      },
+      "provider": {
+        "name": "NVIDIA",
+        "hf_repo_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
+        "api_providers": ["NVIDIA NIM"],
+        "website": "https://nvidia.com/nim"
+      }
+    },
+    {
+      "model_id": "tiiuae/Falcon-OCR",
+      "name": "Falcon OCR",
+      "author": "tiiuae",
+      "release_date": "2026-02-22",
+      "category": "vlm",
+      "source": "seed",
+      "basic": {
+        "name": "Falcon OCR",
+        "org": "tiiuae",
+        "params": "N/A",
+        "architecture": "Falcon OCR (Vision-Language)",
+        "license": "Apache-2.0"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "N/A",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "N/A"
+      },
+      "deployment": {
+        "vram_estimate": "N/A",
+        "quantization_options": "N/A",
+        "api_available": "N/A",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 18710,
+        "likes": 87,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "N/A"
+      },
+      "provider": {
+        "name": "TII UAE",
+        "hf_repo_id": "tiiuae/Falcon-OCR",
+        "api_providers": [],
+        "website": "https://falconllm.tii.ae"
       }
     }
   ]
