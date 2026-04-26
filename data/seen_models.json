@@ -1,0 +1,22 @@
+[
+  "deepseek-ai/DeepSeek-V4-Pro",
+  "moonshotai/Kimi-K2.6",
+  "Qwen/Qwen3.6-27B",
+  "openai/privacy-filter",
+  "deepseek-ai/DeepSeek-V4-Flash",
+  "Qwen/Qwen3.6-35B-A3B",
+  "unsloth/Qwen3.6-27B-GGUF",
+  "unsloth/Qwen3.6-35B-A3B-GGUF",
+  "tencent/HY-World-2.0",
+  "HauhauCS/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive",
+  "deepseek-ai/DeepSeek-V4-Pro-Base",
+  "OBLITERATUS/gemma-4-E4B-it-OBLITERATED",
+  "inclusionAI/LLaDA2.0-Uni",
+  "hesamation/Qwen3.6-35B-A3B-Claude-4.6-Opus-Reasoning-Distilled-GGUF",
+  "google/gemma-4-31B-it",
+  "HauhauCS/Qwen3.6-27B-Uncensored-HauhauCS-Aggressive",
+  "deepseek-ai/DeepSeek-V4-Flash-Base",
+  "tencent/Hy3-preview",
+  "Qwen/Qwen3.6-27B-FP8",
+  "Jackrong/Qwopus-GLM-18B-Merged-GGUF"
+]
