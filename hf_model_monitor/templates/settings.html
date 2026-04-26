@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HF Model Monitor — Settings</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <h1 class="header-title">HF Model Monitor</h1>
+                <nav class="header-nav">
+                    <a href="/" class="nav-link">Dashboard</a>
+                    <a href="/settings" class="nav-link nav-link-active">Settings</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Settings content -->
+    <main class="main-content settings-page">
+        <!-- Status toast (shown after save) -->
+        <div class="toast" id="toast" style="display: none;">
+            <span class="toast-message" id="toast-message"></span>
+        </div>
+
+        <!-- Loading state -->
+        <div class="settings-loading" id="settings-loading">
+            <p>Loading settings...</p>
+        </div>
+
+        <!-- Settings form (hidden until loaded) -->
+        <div class="settings-container" id="settings-container" style="display: none;">
+
+            <!-- ============================================================
+                 Section 1: General Settings
+                 ============================================================ -->
+            <section class="settings-section" id="section-general">
+                <div class="section-header">
+                    <h2 class="section-title">General</h2>
+                    <p class="section-desc">Core polling and startup behavior.</p>
+                </div>
+                <div class="settings-card">
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <label class="setting-label" for="polling-interval">Polling interval</label>
+                            <span class="setting-help">How often to check for new models (in hours). Must be 1–23 to meet the 24-hour detection SLA.</span>
+                        </div>
+                        <div class="setting-control">
+                            <input
+                                type="number"
+                                id="polling-interval"
+                                class="setting-input"
+                                min="1"
+                                max="23"
+                                step="1"
+                            >
+                            <span class="setting-unit">hours</span>
+                        </div>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <label class="setting-label" for="run-on-startup">Run on startup</label>
+                            <span class="setting-help">Run a detection scan immediately when the scheduler starts.</span>
+                        </div>
+                        <div class="setting-control">
+                            <label class="toggle">
+                                <input type="checkbox" id="run-on-startup">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 Section 2: Slack Notifications
+                 ============================================================ -->
+            <section class="settings-section" id="section-slack">
+                <div class="section-header">
+                    <h2 class="section-title">Slack Notifications</h2>
+                    <p class="section-desc">Configure the Slack webhook for model release alerts. The <code>SLACK_WEBHOOK_URL</code> environment variable takes precedence over this setting.</p>
+                </div>
+                <div class="settings-card">
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <label class="setting-label" for="slack-webhook">Webhook URL</label>
+                            <span class="setting-help">Slack incoming webhook URL (must start with https://).</span>
+                        </div>
+                        <div class="setting-control setting-control-wide">
+                            <input
+                                type="url"
+                                id="slack-webhook"
+                                class="setting-input setting-input-wide"
+                                placeholder="https://hooks.slack.com/services/..."
+                            >
+                        </div>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <span class="setting-label">Connection test</span>
+                            <span class="setting-help">Send a test message to verify the webhook is working.</span>
+                        </div>
+                        <div class="setting-control">
+                            <button class="btn btn-secondary" id="btn-test-slack" type="button">
+                                Test Webhook
+                            </button>
+                            <span class="test-status" id="slack-test-status"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 Section 3: Watched Organizations
+                 ============================================================ -->
+            <section class="settings-section" id="section-orgs">
+                <div class="section-header">
+                    <h2 class="section-title">Watched Organizations</h2>
+                    <p class="section-desc">HuggingFace organizations and users monitored for new model releases.</p>
+                </div>
+                <div class="settings-card">
+                    <div class="org-add-row">
+                        <input
+                            type="text"
+                            id="org-add-input"
+                            class="setting-input"
+                            placeholder="Organization name (e.g., meta-llama)"
+                        >
+                        <button class="btn btn-primary" id="btn-add-org" type="button">Add</button>
+                    </div>
+                    <div class="org-list" id="org-list">
+                        <!-- Populated by JS -->
+                    </div>
+                    <div class="org-count" id="org-count"></div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 Section 4: Trending Thresholds
+                 ============================================================ -->
+            <section class="settings-section" id="section-thresholds">
+                <div class="section-header">
+                    <h2 class="section-title">Trending Thresholds</h2>
+                    <p class="section-desc">Auto-detection thresholds for download surges and trending models.</p>
+                </div>
+                <div class="settings-card">
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <label class="setting-label" for="trending-enabled">Enable trending detection</label>
+                            <span class="setting-help">Master switch for download surge and trending score detection.</span>
+                        </div>
+                        <div class="setting-control">
+                            <label class="toggle">
+                                <input type="checkbox" id="trending-enabled">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <label class="setting-label" for="download-surge">Download surge count</label>
+                            <span class="setting-help">Minimum download increase within the time window to trigger a surge alert.</span>
+                        </div>
+                        <div class="setting-control">
+                            <input
+                                type="number"
+                                id="download-surge"
+                                class="setting-input"
+                                min="100"
+                                step="1000"
+                            >
+                        </div>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <label class="setting-label" for="trending-score">Trending score</label>
+                            <span class="setting-help">Minimum HuggingFace trending score to flag a model.</span>
+                        </div>
+                        <div class="setting-control">
+                            <input
+                                type="number"
+                                id="trending-score"
+                                class="setting-input"
+                                min="0"
+                                step="5"
+                            >
+                        </div>
+                    </div>
+                    <div class="setting-row">
+                        <div class="setting-info">
+                            <label class="setting-label" for="time-window">Time window</label>
+                            <span class="setting-help">Rolling window (hours) for evaluating surges and trending scores. Must be 1–168.</span>
+                        </div>
+                        <div class="setting-control">
+                            <input
+                                type="number"
+                                id="time-window"
+                                class="setting-input"
+                                min="1"
+                                max="168"
+                                step="1"
+                            >
+                            <span class="setting-unit">hours</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 Section 5: Schema Field Visibility
+                 ============================================================ -->
+            <section class="settings-section" id="section-schema">
+                <div class="section-header">
+                    <h2 class="section-title">Dashboard Columns</h2>
+                    <p class="section-desc">Toggle which fields are visible in the dashboard table. Changes apply immediately on save.</p>
+                </div>
+                <div class="settings-card">
+                    <div class="schema-fields" id="schema-fields">
+                        <!-- Populated by JS — one toggle per field, grouped by category -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================================================
+                 Save bar (sticky footer)
+                 ============================================================ -->
+            <div class="save-bar" id="save-bar">
+                <div class="save-bar-content">
+                    <span class="save-bar-status" id="save-status">
+                        <span class="unsaved-dot"></span> Unsaved changes
+                    </span>
+                    <div class="save-bar-actions">
+                        <button class="btn btn-secondary" id="btn-discard" type="button">Discard</button>
+                        <button class="btn btn-primary" id="btn-save" type="button">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>HF Model Monitor &mdash; Local dashboard for tracking AI model releases</p>
+    </footer>
+
+    <script src="/static/js/settings.js"></script>
+</body>
+</html>

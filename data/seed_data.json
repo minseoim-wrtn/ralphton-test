@@ -1,0 +1,1435 @@
+{
+  "schema_version": "1.0",
+  "description": "Pre-populated historical model data for dashboard comparison and archive browsing. Each entry follows the single fixed schema used by the metadata collector. Fields not available are set to 'N/A' per project convention.",
+  "last_updated": "2026-04-26",
+  "models": [
+    {
+      "model_id": "openai/gpt-4o",
+      "name": "GPT-4o",
+      "author": "openai",
+      "release_date": "2024-05-13",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "GPT-4o",
+        "org": "openai",
+        "params": "~1.8T (estimated)",
+        "architecture": "Transformer (MoE, estimated)",
+        "license": "Proprietary"
+      },
+      "performance": {
+        "mmlu": "88.7",
+        "humaneval": "90.2",
+        "gpqa": "53.6",
+        "math": "76.6",
+        "arena_elo": "1286",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "16K",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes (OpenAI API)"
+      },
+      "deployment": {
+        "vram_estimate": "N/A (API only)",
+        "quantization_options": "N/A",
+        "api_available": "OpenAI API",
+        "open_weights": false
+      },
+      "community": {
+        "downloads": 0,
+        "likes": 0,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$2.50",
+        "api_price_output_per_1m": "$10.00",
+        "hosting_cost_estimate": "N/A"
+      },
+      "provider": {
+        "name": "OpenAI",
+        "hf_repo_id": "N/A",
+        "api_providers": ["OpenAI", "Azure OpenAI"],
+        "website": "https://openai.com"
+      }
+    },
+    {
+      "model_id": "openai/gpt-4o-mini",
+      "name": "GPT-4o mini",
+      "author": "openai",
+      "release_date": "2024-07-18",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "GPT-4o mini",
+        "org": "openai",
+        "params": "N/A",
+        "architecture": "Transformer (estimated)",
+        "license": "Proprietary"
+      },
+      "performance": {
+        "mmlu": "82.0",
+        "humaneval": "87.0",
+        "gpqa": "N/A",
+        "math": "70.2",
+        "arena_elo": "1215",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "16K",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes (OpenAI API)"
+      },
+      "deployment": {
+        "vram_estimate": "N/A (API only)",
+        "quantization_options": "N/A",
+        "api_available": "OpenAI API",
+        "open_weights": false
+      },
+      "community": {
+        "downloads": 0,
+        "likes": 0,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.15",
+        "api_price_output_per_1m": "$0.60",
+        "hosting_cost_estimate": "N/A"
+      },
+      "provider": {
+        "name": "OpenAI",
+        "hf_repo_id": "N/A",
+        "api_providers": ["OpenAI", "Azure OpenAI"],
+        "website": "https://openai.com"
+      }
+    },
+    {
+      "model_id": "openai/o1",
+      "name": "o1",
+      "author": "openai",
+      "release_date": "2024-12-17",
+      "category": "reasoning",
+      "source": "seed",
+      "basic": {
+        "name": "o1",
+        "org": "openai",
+        "params": "N/A",
+        "architecture": "Transformer (reasoning-optimized)",
+        "license": "Proprietary"
+      },
+      "performance": {
+        "mmlu": "91.8",
+        "humaneval": "92.4",
+        "gpqa": "78.0",
+        "math": "96.4",
+        "arena_elo": "1350",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "200K",
+        "output_window": "100K",
+        "multilingual": "Yes",
+        "fine_tuning_support": "No"
+      },
+      "deployment": {
+        "vram_estimate": "N/A (API only)",
+        "quantization_options": "N/A",
+        "api_available": "OpenAI API",
+        "open_weights": false
+      },
+      "community": {
+        "downloads": 0,
+        "likes": 0,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$15.00",
+        "api_price_output_per_1m": "$60.00",
+        "hosting_cost_estimate": "N/A"
+      },
+      "provider": {
+        "name": "OpenAI",
+        "hf_repo_id": "N/A",
+        "api_providers": ["OpenAI", "Azure OpenAI"],
+        "website": "https://openai.com"
+      }
+    },
+    {
+      "model_id": "anthropic/claude-sonnet-4",
+      "name": "Claude Sonnet 4",
+      "author": "anthropic",
+      "release_date": "2025-05-22",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Claude Sonnet 4",
+        "org": "anthropic",
+        "params": "N/A",
+        "architecture": "Transformer",
+        "license": "Proprietary"
+      },
+      "performance": {
+        "mmlu": "88.8",
+        "humaneval": "93.0",
+        "gpqa": "65.0",
+        "math": "78.0",
+        "arena_elo": "1300",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "200K",
+        "output_window": "64K",
+        "multilingual": "Yes",
+        "fine_tuning_support": "No"
+      },
+      "deployment": {
+        "vram_estimate": "N/A (API only)",
+        "quantization_options": "N/A",
+        "api_available": "Anthropic API",
+        "open_weights": false
+      },
+      "community": {
+        "downloads": 0,
+        "likes": 0,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$3.00",
+        "api_price_output_per_1m": "$15.00",
+        "hosting_cost_estimate": "N/A"
+      },
+      "provider": {
+        "name": "Anthropic",
+        "hf_repo_id": "N/A",
+        "api_providers": ["Anthropic", "AWS Bedrock", "Google Cloud Vertex AI"],
+        "website": "https://anthropic.com"
+      }
+    },
+    {
+      "model_id": "google/gemini-2.5-pro",
+      "name": "Gemini 2.5 Pro",
+      "author": "google",
+      "release_date": "2025-03-25",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Gemini 2.5 Pro",
+        "org": "google",
+        "params": "N/A",
+        "architecture": "Transformer (MoE, estimated)",
+        "license": "Proprietary"
+      },
+      "performance": {
+        "mmlu": "89.0",
+        "humaneval": "84.0",
+        "gpqa": "59.4",
+        "math": "83.0",
+        "arena_elo": "1380",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "1M",
+        "output_window": "65K",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes (Google AI Studio)"
+      },
+      "deployment": {
+        "vram_estimate": "N/A (API only)",
+        "quantization_options": "N/A",
+        "api_available": "Google AI Studio / Vertex AI",
+        "open_weights": false
+      },
+      "community": {
+        "downloads": 0,
+        "likes": 0,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$1.25",
+        "api_price_output_per_1m": "$10.00",
+        "hosting_cost_estimate": "N/A"
+      },
+      "provider": {
+        "name": "Google",
+        "hf_repo_id": "N/A",
+        "api_providers": ["Google AI Studio", "Vertex AI"],
+        "website": "https://deepmind.google"
+      }
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-405B-Instruct",
+      "name": "Llama 3.1 405B Instruct",
+      "author": "meta-llama",
+      "release_date": "2024-07-23",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Llama 3.1 405B Instruct",
+        "org": "meta-llama",
+        "params": "405B",
+        "architecture": "Llama (dense Transformer)",
+        "license": "Llama 3.1 Community License"
+      },
+      "performance": {
+        "mmlu": "87.3",
+        "humaneval": "61.0",
+        "gpqa": "50.7",
+        "math": "73.8",
+        "arena_elo": "1247",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "N/A",
+        "multilingual": "Yes (8 languages)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~810GB FP16",
+        "quantization_options": "GPTQ, AWQ, GGUF",
+        "api_available": "HF Inference API, Replicate, Together AI",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 4200000,
+        "likes": 8500,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.90",
+        "api_price_output_per_1m": "$0.90",
+        "hosting_cost_estimate": "~$4-6/hr (8xA100 80GB)"
+      },
+      "provider": {
+        "name": "Meta",
+        "hf_repo_id": "meta-llama/Llama-3.1-405B-Instruct",
+        "api_providers": ["Together AI", "Fireworks AI", "Replicate", "Groq"],
+        "website": "https://llama.meta.com"
+      }
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-70B-Instruct",
+      "name": "Llama 3.1 70B Instruct",
+      "author": "meta-llama",
+      "release_date": "2024-07-23",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Llama 3.1 70B Instruct",
+        "org": "meta-llama",
+        "params": "70.6B",
+        "architecture": "Llama (dense Transformer)",
+        "license": "Llama 3.1 Community License"
+      },
+      "performance": {
+        "mmlu": "83.6",
+        "humaneval": "80.5",
+        "gpqa": "46.7",
+        "math": "68.0",
+        "arena_elo": "1207",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "N/A",
+        "multilingual": "Yes (8 languages)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~140GB FP16",
+        "quantization_options": "GPTQ, AWQ, GGUF",
+        "api_available": "HF Inference API, Together AI, Groq",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 18500000,
+        "likes": 12000,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.52",
+        "api_price_output_per_1m": "$0.75",
+        "hosting_cost_estimate": "~$1.50-2/hr (2xA100 80GB)"
+      },
+      "provider": {
+        "name": "Meta",
+        "hf_repo_id": "meta-llama/Llama-3.1-70B-Instruct",
+        "api_providers": ["Together AI", "Fireworks AI", "Groq", "Replicate"],
+        "website": "https://llama.meta.com"
+      }
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "name": "Llama 3.1 8B Instruct",
+      "author": "meta-llama",
+      "release_date": "2024-07-23",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Llama 3.1 8B Instruct",
+        "org": "meta-llama",
+        "params": "8.0B",
+        "architecture": "Llama (dense Transformer)",
+        "license": "Llama 3.1 Community License"
+      },
+      "performance": {
+        "mmlu": "73.0",
+        "humaneval": "72.6",
+        "gpqa": "32.8",
+        "math": "51.9",
+        "arena_elo": "1148",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "N/A",
+        "multilingual": "Yes (8 languages)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~16GB FP16",
+        "quantization_options": "GPTQ, AWQ, GGUF",
+        "api_available": "HF Inference API, Together AI, Groq",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 42000000,
+        "likes": 15000,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.05",
+        "api_price_output_per_1m": "$0.08",
+        "hosting_cost_estimate": "~$0.50/hr (1xA100 40GB)"
+      },
+      "provider": {
+        "name": "Meta",
+        "hf_repo_id": "meta-llama/Llama-3.1-8B-Instruct",
+        "api_providers": ["Together AI", "Fireworks AI", "Groq", "Replicate"],
+        "website": "https://llama.meta.com"
+      }
+    },
+    {
+      "model_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+      "name": "Llama 4 Scout 17B-16E Instruct",
+      "author": "meta-llama",
+      "release_date": "2025-04-05",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Llama 4 Scout 17B-16E Instruct",
+        "org": "meta-llama",
+        "params": "109B total (17B active)",
+        "architecture": "Llama MoE (16 experts)",
+        "license": "Llama 4 Community License"
+      },
+      "performance": {
+        "mmlu": "84.5",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "10M",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~220GB FP16",
+        "quantization_options": "N/A",
+        "api_available": "HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 850000,
+        "likes": 3500,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$2-3/hr (4xA100 80GB)"
+      },
+      "provider": {
+        "name": "Meta",
+        "hf_repo_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+        "api_providers": ["Together AI", "Fireworks AI"],
+        "website": "https://llama.meta.com"
+      }
+    },
+    {
+      "model_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+      "name": "Llama 4 Maverick 17B-128E Instruct",
+      "author": "meta-llama",
+      "release_date": "2025-04-05",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Llama 4 Maverick 17B-128E Instruct",
+        "org": "meta-llama",
+        "params": "400B total (17B active)",
+        "architecture": "Llama MoE (128 experts)",
+        "license": "Llama 4 Community License"
+      },
+      "performance": {
+        "mmlu": "88.4",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "1M",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~800GB FP16",
+        "quantization_options": "N/A",
+        "api_available": "HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 420000,
+        "likes": 2800,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$5-7/hr (8xA100 80GB)"
+      },
+      "provider": {
+        "name": "Meta",
+        "hf_repo_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
+        "api_providers": ["Together AI"],
+        "website": "https://llama.meta.com"
+      }
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-V3-0324",
+      "name": "DeepSeek-V3",
+      "author": "deepseek-ai",
+      "release_date": "2025-03-24",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "DeepSeek-V3",
+        "org": "deepseek-ai",
+        "params": "671B total (37B active)",
+        "architecture": "DeepSeek MoE + MLA",
+        "license": "MIT"
+      },
+      "performance": {
+        "mmlu": "88.5",
+        "humaneval": "82.6",
+        "gpqa": "59.1",
+        "math": "90.2",
+        "arena_elo": "1318",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "8K",
+        "multilingual": "Yes (Chinese, English)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~1.3TB FP16",
+        "quantization_options": "FP8, GPTQ",
+        "api_available": "DeepSeek API, HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 3200000,
+        "likes": 25000,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.27",
+        "api_price_output_per_1m": "$1.10",
+        "hosting_cost_estimate": "~$8-12/hr (8xH100)"
+      },
+      "provider": {
+        "name": "DeepSeek",
+        "hf_repo_id": "deepseek-ai/DeepSeek-V3-0324",
+        "api_providers": ["DeepSeek API", "Together AI", "Fireworks AI"],
+        "website": "https://deepseek.com"
+      }
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-R1",
+      "name": "DeepSeek-R1",
+      "author": "deepseek-ai",
+      "release_date": "2025-01-20",
+      "category": "reasoning",
+      "source": "seed",
+      "basic": {
+        "name": "DeepSeek-R1",
+        "org": "deepseek-ai",
+        "params": "671B total (37B active)",
+        "architecture": "DeepSeek MoE + MLA (reasoning-tuned)",
+        "license": "MIT"
+      },
+      "performance": {
+        "mmlu": "90.8",
+        "humaneval": "85.0",
+        "gpqa": "71.5",
+        "math": "97.3",
+        "arena_elo": "1358",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "8K",
+        "multilingual": "Yes (Chinese, English)",
+        "fine_tuning_support": "N/A"
+      },
+      "deployment": {
+        "vram_estimate": "~1.3TB FP16",
+        "quantization_options": "FP8, GPTQ",
+        "api_available": "DeepSeek API, HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 5800000,
+        "likes": 42000,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.55",
+        "api_price_output_per_1m": "$2.19",
+        "hosting_cost_estimate": "~$8-12/hr (8xH100)"
+      },
+      "provider": {
+        "name": "DeepSeek",
+        "hf_repo_id": "deepseek-ai/DeepSeek-R1",
+        "api_providers": ["DeepSeek API", "Together AI", "Fireworks AI"],
+        "website": "https://deepseek.com"
+      }
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-72B-Instruct",
+      "name": "Qwen 2.5 72B Instruct",
+      "author": "Qwen",
+      "release_date": "2024-09-19",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Qwen 2.5 72B Instruct",
+        "org": "Qwen",
+        "params": "72.7B",
+        "architecture": "Qwen2 (dense Transformer)",
+        "license": "Apache 2.0"
+      },
+      "performance": {
+        "mmlu": "85.3",
+        "humaneval": "86.4",
+        "gpqa": "49.0",
+        "math": "83.1",
+        "arena_elo": "1261",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "8K",
+        "multilingual": "Yes (29+ languages)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~144GB FP16",
+        "quantization_options": "GPTQ, AWQ, GGUF",
+        "api_available": "HF Inference API, DashScope",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 9500000,
+        "likes": 6500,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.30",
+        "api_price_output_per_1m": "$0.30",
+        "hosting_cost_estimate": "~$1.50-2/hr (2xA100 80GB)"
+      },
+      "provider": {
+        "name": "Alibaba Cloud (Qwen Team)",
+        "hf_repo_id": "Qwen/Qwen2.5-72B-Instruct",
+        "api_providers": ["DashScope", "Together AI", "Fireworks AI"],
+        "website": "https://qwenlm.github.io"
+      }
+    },
+    {
+      "model_id": "Qwen/Qwen3-235B-A22B",
+      "name": "Qwen3 235B-A22B",
+      "author": "Qwen",
+      "release_date": "2025-04-28",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Qwen3 235B-A22B",
+        "org": "Qwen",
+        "params": "235B total (22B active)",
+        "architecture": "Qwen3 MoE",
+        "license": "Apache 2.0"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "N/A",
+        "multilingual": "Yes (29+ languages)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~470GB FP16",
+        "quantization_options": "GPTQ, AWQ, GGUF",
+        "api_available": "HF Inference API, DashScope",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 0,
+        "likes": 0,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$4-6/hr (8xA100 80GB)"
+      },
+      "provider": {
+        "name": "Alibaba Cloud (Qwen Team)",
+        "hf_repo_id": "Qwen/Qwen3-235B-A22B",
+        "api_providers": ["DashScope"],
+        "website": "https://qwenlm.github.io"
+      }
+    },
+    {
+      "model_id": "Qwen/QwQ-32B",
+      "name": "QwQ 32B",
+      "author": "Qwen",
+      "release_date": "2025-03-06",
+      "category": "reasoning",
+      "source": "seed",
+      "basic": {
+        "name": "QwQ 32B",
+        "org": "Qwen",
+        "params": "32.8B",
+        "architecture": "Qwen2.5 (reasoning-tuned)",
+        "license": "Apache 2.0"
+      },
+      "performance": {
+        "mmlu": "85.0",
+        "humaneval": "N/A",
+        "gpqa": "65.2",
+        "math": "90.6",
+        "arena_elo": "1316",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "8K",
+        "multilingual": "Yes (29+ languages)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~66GB FP16",
+        "quantization_options": "GPTQ, AWQ, GGUF",
+        "api_available": "HF Inference API, DashScope",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 6200000,
+        "likes": 11500,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.15",
+        "api_price_output_per_1m": "$0.15",
+        "hosting_cost_estimate": "~$1/hr (1xA100 80GB)"
+      },
+      "provider": {
+        "name": "Alibaba Cloud (Qwen Team)",
+        "hf_repo_id": "Qwen/QwQ-32B",
+        "api_providers": ["DashScope", "Together AI", "Groq"],
+        "website": "https://qwenlm.github.io"
+      }
+    },
+    {
+      "model_id": "mistralai/Mistral-Large-Instruct-2411",
+      "name": "Mistral Large Instruct",
+      "author": "mistralai",
+      "release_date": "2024-11-18",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Mistral Large Instruct",
+        "org": "mistralai",
+        "params": "123B",
+        "architecture": "Mistral (dense Transformer)",
+        "license": "Mistral Research License"
+      },
+      "performance": {
+        "mmlu": "84.0",
+        "humaneval": "72.0",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "1250",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "N/A",
+        "multilingual": "Yes (French, German, Spanish, Italian, etc.)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~246GB FP16",
+        "quantization_options": "GPTQ, AWQ, GGUF",
+        "api_available": "Mistral API, HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 1200000,
+        "likes": 3200,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$2.00",
+        "api_price_output_per_1m": "$6.00",
+        "hosting_cost_estimate": "~$3-4/hr (4xA100 80GB)"
+      },
+      "provider": {
+        "name": "Mistral AI",
+        "hf_repo_id": "mistralai/Mistral-Large-Instruct-2411",
+        "api_providers": ["Mistral API", "Azure AI", "Together AI"],
+        "website": "https://mistral.ai"
+      }
+    },
+    {
+      "model_id": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+      "name": "Mixtral 8x22B Instruct",
+      "author": "mistralai",
+      "release_date": "2024-04-17",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Mixtral 8x22B Instruct",
+        "org": "mistralai",
+        "params": "176B total (39B active)",
+        "architecture": "Mixtral MoE (8 experts)",
+        "license": "Apache 2.0"
+      },
+      "performance": {
+        "mmlu": "77.8",
+        "humaneval": "75.0",
+        "gpqa": "N/A",
+        "math": "76.5",
+        "arena_elo": "1146",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "64K",
+        "output_window": "N/A",
+        "multilingual": "Yes (French, German, Spanish, Italian)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~352GB FP16",
+        "quantization_options": "GPTQ, AWQ, GGUF",
+        "api_available": "Mistral API, HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 2800000,
+        "likes": 4500,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.90",
+        "api_price_output_per_1m": "$0.90",
+        "hosting_cost_estimate": "~$4-5/hr (4xA100 80GB)"
+      },
+      "provider": {
+        "name": "Mistral AI",
+        "hf_repo_id": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+        "api_providers": ["Mistral API", "Together AI", "Fireworks AI"],
+        "website": "https://mistral.ai"
+      }
+    },
+    {
+      "model_id": "google/gemma-3-27b-it",
+      "name": "Gemma 3 27B IT",
+      "author": "google",
+      "release_date": "2025-03-12",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Gemma 3 27B IT",
+        "org": "google",
+        "params": "27B",
+        "architecture": "Gemma (dense Transformer)",
+        "license": "Gemma License"
+      },
+      "performance": {
+        "mmlu": "75.6",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "1262",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "8K",
+        "multilingual": "Yes (multimodal: text + image)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~54GB FP16",
+        "quantization_options": "GPTQ, GGUF",
+        "api_available": "HF Inference API, Google AI Studio",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 7800000,
+        "likes": 5200,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.10",
+        "api_price_output_per_1m": "$0.10",
+        "hosting_cost_estimate": "~$1/hr (1xA100 80GB)"
+      },
+      "provider": {
+        "name": "Google",
+        "hf_repo_id": "google/gemma-3-27b-it",
+        "api_providers": ["Google AI Studio", "HF Inference API", "Together AI"],
+        "website": "https://ai.google.dev/gemma"
+      }
+    },
+    {
+      "model_id": "microsoft/phi-4",
+      "name": "Phi-4",
+      "author": "microsoft",
+      "release_date": "2024-12-12",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Phi-4",
+        "org": "microsoft",
+        "params": "14B",
+        "architecture": "Phi (dense Transformer)",
+        "license": "MIT"
+      },
+      "performance": {
+        "mmlu": "84.8",
+        "humaneval": "82.6",
+        "gpqa": "56.1",
+        "math": "80.4",
+        "arena_elo": "1200",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "16K",
+        "output_window": "N/A",
+        "multilingual": "Yes (limited)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~28GB FP16",
+        "quantization_options": "GPTQ, AWQ, GGUF",
+        "api_available": "HF Inference API, Azure AI",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 5400000,
+        "likes": 4800,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.07",
+        "api_price_output_per_1m": "$0.14",
+        "hosting_cost_estimate": "~$0.50/hr (1xA100 40GB)"
+      },
+      "provider": {
+        "name": "Microsoft",
+        "hf_repo_id": "microsoft/phi-4",
+        "api_providers": ["Azure AI", "HF Inference API", "Ollama"],
+        "website": "https://azure.microsoft.com/en-us/products/phi"
+      }
+    },
+    {
+      "model_id": "CohereForAI/c4ai-command-r-plus-08-2024",
+      "name": "Command R+ (Aug 2024)",
+      "author": "CohereForAI",
+      "release_date": "2024-08-01",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Command R+",
+        "org": "CohereForAI",
+        "params": "104B",
+        "architecture": "Command R (dense Transformer)",
+        "license": "CC-BY-NC-4.0"
+      },
+      "performance": {
+        "mmlu": "75.7",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "1180",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "4K",
+        "multilingual": "Yes (10 languages)",
+        "fine_tuning_support": "Yes (Cohere API)"
+      },
+      "deployment": {
+        "vram_estimate": "~208GB FP16",
+        "quantization_options": "GPTQ, GGUF",
+        "api_available": "Cohere API, HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 680000,
+        "likes": 1800,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$2.50",
+        "api_price_output_per_1m": "$10.00",
+        "hosting_cost_estimate": "~$3-4/hr (4xA100 80GB)"
+      },
+      "provider": {
+        "name": "Cohere",
+        "hf_repo_id": "CohereForAI/c4ai-command-r-plus-08-2024",
+        "api_providers": ["Cohere API", "Azure AI"],
+        "website": "https://cohere.com"
+      }
+    },
+    {
+      "model_id": "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+      "name": "Nemotron 70B Instruct",
+      "author": "nvidia",
+      "release_date": "2024-10-15",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Nemotron 70B Instruct",
+        "org": "nvidia",
+        "params": "70.6B",
+        "architecture": "Llama 3.1 (NVIDIA-tuned)",
+        "license": "Llama 3.1 Community License"
+      },
+      "performance": {
+        "mmlu": "84.9",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "1238",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~140GB FP16",
+        "quantization_options": "GPTQ, AWQ, GGUF",
+        "api_available": "NVIDIA NIM, HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 1900000,
+        "likes": 3400,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.40",
+        "api_price_output_per_1m": "$0.40",
+        "hosting_cost_estimate": "~$1.50-2/hr (2xA100 80GB)"
+      },
+      "provider": {
+        "name": "NVIDIA",
+        "hf_repo_id": "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF",
+        "api_providers": ["NVIDIA NIM", "Together AI"],
+        "website": "https://build.nvidia.com"
+      }
+    },
+    {
+      "model_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "name": "Qwen 2.5 Coder 32B Instruct",
+      "author": "Qwen",
+      "release_date": "2024-11-12",
+      "category": "code",
+      "source": "seed",
+      "basic": {
+        "name": "Qwen 2.5 Coder 32B Instruct",
+        "org": "Qwen",
+        "params": "32.5B",
+        "architecture": "Qwen2 (code-tuned)",
+        "license": "Apache 2.0"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "92.7",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "8K",
+        "multilingual": "Yes (code: 40+ languages)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~65GB FP16",
+        "quantization_options": "GPTQ, AWQ, GGUF",
+        "api_available": "HF Inference API, DashScope",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 8200000,
+        "likes": 7800,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.15",
+        "api_price_output_per_1m": "$0.15",
+        "hosting_cost_estimate": "~$1/hr (1xA100 80GB)"
+      },
+      "provider": {
+        "name": "Alibaba Cloud (Qwen Team)",
+        "hf_repo_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+        "api_providers": ["DashScope", "Together AI", "Fireworks AI"],
+        "website": "https://qwenlm.github.io"
+      }
+    },
+    {
+      "model_id": "deepseek-ai/DeepSeek-Coder-V2-Instruct",
+      "name": "DeepSeek Coder V2 Instruct",
+      "author": "deepseek-ai",
+      "release_date": "2024-06-17",
+      "category": "code",
+      "source": "seed",
+      "basic": {
+        "name": "DeepSeek Coder V2 Instruct",
+        "org": "deepseek-ai",
+        "params": "236B total (21B active)",
+        "architecture": "DeepSeek MoE (code-tuned)",
+        "license": "MIT"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "90.2",
+        "gpqa": "N/A",
+        "math": "75.7",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "128K",
+        "output_window": "8K",
+        "multilingual": "Yes (code: 300+ languages)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~472GB FP16",
+        "quantization_options": "FP8, GPTQ",
+        "api_available": "DeepSeek API, HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 1500000,
+        "likes": 4200,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$0.14",
+        "api_price_output_per_1m": "$0.28",
+        "hosting_cost_estimate": "~$4-6/hr (8xA100 80GB)"
+      },
+      "provider": {
+        "name": "DeepSeek",
+        "hf_repo_id": "deepseek-ai/DeepSeek-Coder-V2-Instruct",
+        "api_providers": ["DeepSeek API", "Together AI"],
+        "website": "https://deepseek.com"
+      }
+    },
+    {
+      "model_id": "stabilityai/stable-diffusion-3.5-large",
+      "name": "Stable Diffusion 3.5 Large",
+      "author": "stabilityai",
+      "release_date": "2024-10-22",
+      "category": "vision",
+      "source": "seed",
+      "basic": {
+        "name": "Stable Diffusion 3.5 Large",
+        "org": "stabilityai",
+        "params": "8.1B",
+        "architecture": "MMDiT (Multimodal Diffusion Transformer)",
+        "license": "Stability AI Community License"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "N/A",
+        "output_window": "N/A",
+        "multilingual": "N/A",
+        "fine_tuning_support": "Yes (LoRA, DreamBooth)"
+      },
+      "deployment": {
+        "vram_estimate": "~16GB FP16",
+        "quantization_options": "FP16, BF16",
+        "api_available": "Stability API, HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 2400000,
+        "likes": 5600,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A ($0.04/image via Stability API)",
+        "hosting_cost_estimate": "~$0.50/hr (1xA100 40GB)"
+      },
+      "provider": {
+        "name": "Stability AI",
+        "hf_repo_id": "stabilityai/stable-diffusion-3.5-large",
+        "api_providers": ["Stability API", "Replicate"],
+        "website": "https://stability.ai"
+      }
+    },
+    {
+      "model_id": "black-forest-labs/FLUX.1-dev",
+      "name": "FLUX.1 Dev",
+      "author": "black-forest-labs",
+      "release_date": "2024-08-01",
+      "category": "vision",
+      "source": "seed",
+      "basic": {
+        "name": "FLUX.1 Dev",
+        "org": "black-forest-labs",
+        "params": "12B",
+        "architecture": "Flow Matching Transformer",
+        "license": "FLUX.1-dev Non-Commercial License"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "N/A",
+        "output_window": "N/A",
+        "multilingual": "N/A",
+        "fine_tuning_support": "Yes (LoRA)"
+      },
+      "deployment": {
+        "vram_estimate": "~24GB FP16",
+        "quantization_options": "FP16, BF16, FP8",
+        "api_available": "BFL API, HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 6500000,
+        "likes": 9800,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A ($0.04/image via BFL API)",
+        "hosting_cost_estimate": "~$0.75/hr (1xA100 40GB)"
+      },
+      "provider": {
+        "name": "Black Forest Labs",
+        "hf_repo_id": "black-forest-labs/FLUX.1-dev",
+        "api_providers": ["BFL API", "Replicate", "fal.ai"],
+        "website": "https://blackforestlabs.ai"
+      }
+    },
+    {
+      "model_id": "openai/whisper-large-v3-turbo",
+      "name": "Whisper Large v3 Turbo",
+      "author": "openai",
+      "release_date": "2024-10-01",
+      "category": "audio",
+      "source": "seed",
+      "basic": {
+        "name": "Whisper Large v3 Turbo",
+        "org": "openai",
+        "params": "809M",
+        "architecture": "Whisper (encoder-decoder Transformer)",
+        "license": "MIT"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "N/A (30s audio chunks)",
+        "output_window": "N/A",
+        "multilingual": "Yes (99 languages)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~2GB FP16",
+        "quantization_options": "FP16, INT8, CTranslate2",
+        "api_available": "OpenAI API, HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 15000000,
+        "likes": 6200,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A ($0.006/min via OpenAI API)",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$0.25/hr (1x consumer GPU)"
+      },
+      "provider": {
+        "name": "OpenAI",
+        "hf_repo_id": "openai/whisper-large-v3-turbo",
+        "api_providers": ["OpenAI API", "Replicate", "HF Inference API"],
+        "website": "https://openai.com"
+      }
+    },
+    {
+      "model_id": "BAAI/bge-en-icl",
+      "name": "BGE-en-ICL",
+      "author": "BAAI",
+      "release_date": "2024-09-01",
+      "category": "embedding",
+      "source": "seed",
+      "basic": {
+        "name": "BGE-en-ICL",
+        "org": "BAAI",
+        "params": "7.1B",
+        "architecture": "Mistral-based (embedding-tuned)",
+        "license": "Apache 2.0"
+      },
+      "performance": {
+        "mmlu": "N/A",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "32K",
+        "output_window": "N/A (embedding dimension: 4096)",
+        "multilingual": "No (English-focused)",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~14GB FP16",
+        "quantization_options": "FP16, INT8",
+        "api_available": "HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 1800000,
+        "likes": 1200,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "N/A",
+        "api_price_output_per_1m": "N/A",
+        "hosting_cost_estimate": "~$0.50/hr (1x A100 40GB)"
+      },
+      "provider": {
+        "name": "BAAI (Beijing Academy of AI)",
+        "hf_repo_id": "BAAI/bge-en-icl",
+        "api_providers": ["HF Inference API"],
+        "website": "https://huggingface.co/BAAI"
+      }
+    },
+    {
+      "model_id": "ai21labs/AI21-Jamba-1.5-Large",
+      "name": "Jamba 1.5 Large",
+      "author": "ai21labs",
+      "release_date": "2024-08-22",
+      "category": "llm",
+      "source": "seed",
+      "basic": {
+        "name": "Jamba 1.5 Large",
+        "org": "ai21labs",
+        "params": "94B (52B active)",
+        "architecture": "Hybrid SSM-Transformer (Mamba + MoE)",
+        "license": "Jamba Open Model License"
+      },
+      "performance": {
+        "mmlu": "80.0",
+        "humaneval": "N/A",
+        "gpqa": "N/A",
+        "math": "N/A",
+        "arena_elo": "N/A",
+        "arena_rank": "N/A"
+      },
+      "practical": {
+        "context_window": "256K",
+        "output_window": "N/A",
+        "multilingual": "Yes",
+        "fine_tuning_support": "Yes"
+      },
+      "deployment": {
+        "vram_estimate": "~188GB FP16",
+        "quantization_options": "N/A",
+        "api_available": "AI21 API, HF Inference API",
+        "open_weights": true
+      },
+      "community": {
+        "downloads": 320000,
+        "likes": 1500,
+        "trending_rank": "N/A"
+      },
+      "cost": {
+        "api_price_input_per_1m": "$2.00",
+        "api_price_output_per_1m": "$8.00",
+        "hosting_cost_estimate": "~$2-3/hr (4xA100 80GB)"
+      },
+      "provider": {
+        "name": "AI21 Labs",
+        "hf_repo_id": "ai21labs/AI21-Jamba-1.5-Large",
+        "api_providers": ["AI21 API", "Azure AI"],
+        "website": "https://ai21.com"
+      }
+    }
+  ]
+}

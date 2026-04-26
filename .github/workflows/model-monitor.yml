@@ -25,12 +25,12 @@ jobs:
       - name: Run model monitor
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: python -m hf_model_monitor.main
+        run: python -m hf_model_monitor --once
 
       - name: Commit updated state
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/seen_models.json
-          git diff --cached --quiet || git commit -m "chore: update seen_models state"
+          git add data/model_store.db
+          git diff --cached --quiet || git commit -m "chore: update model store state"
           git push

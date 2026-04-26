@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HF Model Monitor — Dashboard</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <h1 class="header-title">HF Model Monitor</h1>
+                <nav class="header-nav">
+                    <a href="/" class="nav-link nav-link-active">Dashboard</a>
+                    <a href="/settings" class="nav-link">Settings</a>
+                </nav>
+            </div>
+            <div class="header-stats" id="header-stats">
+                <span class="stat-badge" id="stat-total" title="Total models tracked">
+                    <span class="stat-icon">&#x1f4ca;</span> <span id="stat-total-count">--</span> models
+                </span>
+                <span class="stat-badge" id="stat-categories" title="Model categories">
+                    <span class="stat-icon">&#x1f3f7;</span> <span id="stat-cat-count">--</span> categories
+                </span>
+                <span class="stat-badge" id="stat-poll" title="Last poll time">
+                    <span class="stat-icon">&#x1f504;</span> <span id="stat-last-poll">Never</span>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Toolbar: search + filters -->
+    <section class="toolbar">
+        <div class="toolbar-content">
+            <!-- Row 1: Search + primary filters -->
+            <div class="toolbar-row">
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search models by name, org, or ID..."
+                        autocomplete="off"
+                    >
+                </div>
+                <div class="filter-group">
+                    <label for="filter-category">Category:</label>
+                    <select id="filter-category">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-family">Model Family:</label>
+                    <select id="filter-family">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-provider">Provider:</label>
+                    <select id="filter-provider">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filter-weights">Weights:</label>
+                    <select id="filter-weights">
+                        <option value="">All</option>
+                        <option value="open">Open weights</option>
+                        <option value="closed">Proprietary</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Row 2: Range filters + actions -->
+            <div class="toolbar-row">
+                <div class="filter-group filter-range">
+                    <label>Params:</label>
+                    <input
+                        type="number"
+                        id="filter-params-min"
+                        class="range-input"
+                        placeholder="Min (B)"
+                        min="0"
+                        step="0.1"
+                        title="Minimum parameter count in billions"
+                    >
+                    <span class="range-separator">—</span>
+                    <input
+                        type="number"
+                        id="filter-params-max"
+                        class="range-input"
+                        placeholder="Max (B)"
+                        min="0"
+                        step="0.1"
+                        title="Maximum parameter count in billions"
+                    >
+                    <span class="range-unit">B</span>
+                </div>
+                <div class="filter-group">
+                    <button class="btn btn-secondary" id="btn-reset" title="Reset all filters">
+                        Reset
+                    </button>
+                </div>
+                <div class="toolbar-right">
+                    <span class="result-count" id="result-count"></span>
+                    <span class="active-filters" id="active-filters"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main table -->
+    <main class="main-content">
+        <div class="table-wrapper">
+            <table class="model-table" id="model-table">
+                <thead>
+                    <tr>
+                        <th class="col-name sortable" data-sort="name" data-sort-type="string">
+                            Model <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-org sortable" data-sort="author" data-sort-type="string">
+                            Org <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-category sortable" data-sort="category" data-sort-type="string">
+                            Category <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-params sortable" data-sort="params" data-sort-type="numeric">
+                            Params <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-date sortable" data-sort="release_date" data-sort-type="date">
+                            Released <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-bench sortable" data-sort="mmlu" data-sort-type="numeric">
+                            MMLU <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-bench sortable" data-sort="humaneval" data-sort-type="numeric">
+                            HumanEval <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-bench sortable" data-sort="gpqa" data-sort-type="numeric">
+                            GPQA <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-bench sortable" data-sort="math" data-sort-type="numeric">
+                            MATH <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-price sortable" data-sort="api_price_input" data-sort-type="numeric">
+                            Price (in) <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-price sortable" data-sort="api_price_output" data-sort-type="numeric">
+                            Price (out) <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-ctx sortable" data-sort="context_window" data-sort-type="numeric">
+                            Context <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-license sortable" data-sort="license" data-sort-type="string">
+                            License <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-downloads sortable" data-sort="downloads" data-sort-type="numeric">
+                            Downloads <span class="sort-arrow"></span>
+                        </th>
+                        <th class="col-likes sortable" data-sort="likes" data-sort-type="numeric">
+                            Likes <span class="sort-arrow"></span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="model-tbody">
+                    <tr class="loading-row">
+                        <td colspan="15">Loading models...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Empty state -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+            <p>No models match your filters.</p>
+            <button class="btn btn-secondary" id="btn-clear-search">Clear filters</button>
+        </div>
+    </main>
+
+    <!-- Model detail modal -->
+    <div class="modal-overlay" id="modal-overlay" style="display: none;">
+        <div class="modal" id="model-modal">
+            <div class="modal-header">
+                <h2 id="modal-title">Model Details</h2>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>HF Model Monitor &mdash; Local dashboard for tracking AI model releases</p>
+    </footer>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

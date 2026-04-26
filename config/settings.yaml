@@ -1,0 +1,27 @@
+# HuggingFace Model Monitor — Configuration
+# Edit this file to customize which organizations are monitored.
+
+watched_organizations:
+- meta-llama
+- google
+- mistralai
+- Qwen
+- microsoft
+- deepseek-ai
+- openai
+- stabilityai
+- nvidia
+- alibaba-nlp
+- apple
+- CohereForAI
+- bigscience
+- EleutherAI
+- tiiuae
+polling_interval_hours: 12
+run_on_startup: true
+slack_webhook_url: ''
+trending_thresholds:
+  enabled: false
+  download_surge_count: 10000
+  trending_score: 50
+  time_window_hours: 24

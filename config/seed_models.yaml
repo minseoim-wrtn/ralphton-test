@@ -1,0 +1,483 @@
+# Seed Model List — Curated major HuggingFace models
+#
+# These are well-known, official models already on HuggingFace, organized by
+# category.  The monitor pre-loads them into the ModelStore on first run so
+# they appear as "known" baseline entries rather than triggering false
+# new-model alerts.
+#
+# Rules:
+#   - Only official / first-party repositories (no community quants/LoRA)
+#   - HF repo IDs must be exact (org/model-name)
+#   - Categories are for dashboard display grouping only
+#
+# To add a model: append it under the appropriate category with its HF repo ID.
+# The monitor will fetch full metadata from the HF API on the next run.
+
+categories:
+
+  # ---------------------------------------------------------------------------
+  # Large Language Models (LLMs)
+  # ---------------------------------------------------------------------------
+  llm:
+    label: "Large Language Models"
+    description: "General-purpose text generation and instruction-following models"
+    models:
+      # --- Meta Llama ---
+      - repo_id: "meta-llama/Llama-4-Scout-17B-16E"
+        name: "Llama 4 Scout 17B-16E"
+        notes: "Llama 4 Scout — 17B active params, 16 experts MoE"
+
+      - repo_id: "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+        name: "Llama 4 Scout 17B-16E Instruct"
+        notes: "Instruction-tuned Llama 4 Scout"
+
+      - repo_id: "meta-llama/Llama-4-Maverick-17B-128E"
+        name: "Llama 4 Maverick 17B-128E"
+        notes: "Llama 4 Maverick — 17B active params, 128 experts MoE"
+
+      - repo_id: "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+        name: "Llama 4 Maverick 17B-128E Instruct"
+        notes: "Instruction-tuned Llama 4 Maverick"
+
+      - repo_id: "meta-llama/Llama-3.3-70B-Instruct"
+        name: "Llama 3.3 70B Instruct"
+        notes: "Latest Llama 3.3 instruction-tuned 70B"
+
+      - repo_id: "meta-llama/Llama-3.1-405B-Instruct"
+        name: "Llama 3.1 405B Instruct"
+        notes: "Largest open-weight Llama model"
+
+      - repo_id: "meta-llama/Llama-3.1-70B-Instruct"
+        name: "Llama 3.1 70B Instruct"
+        notes: "Llama 3.1 70B instruction-tuned"
+
+      - repo_id: "meta-llama/Llama-3.1-8B-Instruct"
+        name: "Llama 3.1 8B Instruct"
+        notes: "Llama 3.1 8B instruction-tuned"
+
+      - repo_id: "meta-llama/Llama-3.2-3B-Instruct"
+        name: "Llama 3.2 3B Instruct"
+        notes: "Lightweight Llama 3.2"
+
+      - repo_id: "meta-llama/Llama-3.2-1B-Instruct"
+        name: "Llama 3.2 1B Instruct"
+        notes: "Smallest Llama 3.2 text model"
+
+      # --- Mistral ---
+      - repo_id: "mistralai/Mistral-Large-Instruct-2411"
+        name: "Mistral Large Instruct"
+        notes: "123B flagship model"
+
+      - repo_id: "mistralai/Mistral-Small-24B-Instruct-2501"
+        name: "Mistral Small 24B Instruct"
+        notes: "Efficient 24B model"
+
+      - repo_id: "mistralai/Mistral-Nemo-Instruct-2407"
+        name: "Mistral Nemo Instruct"
+        notes: "12B model co-developed with NVIDIA"
+
+      - repo_id: "mistralai/Mixtral-8x22B-Instruct-v0.1"
+        name: "Mixtral 8x22B Instruct"
+        notes: "Large MoE model"
+
+      - repo_id: "mistralai/Mixtral-8x7B-Instruct-v0.1"
+        name: "Mixtral 8x7B Instruct"
+        notes: "Popular MoE model"
+
+      - repo_id: "mistralai/Mistral-7B-Instruct-v0.3"
+        name: "Mistral 7B Instruct v0.3"
+        notes: "Compact 7B model"
+
+      # --- Qwen ---
+      - repo_id: "Qwen/Qwen3-235B-A22B"
+        name: "Qwen3 235B-A22B"
+        notes: "Qwen3 flagship MoE — 235B total, 22B active"
+
+      - repo_id: "Qwen/Qwen3-30B-A3B"
+        name: "Qwen3 30B-A3B"
+        notes: "Qwen3 efficient MoE — 30B total, 3B active"
+
+      - repo_id: "Qwen/Qwen2.5-72B-Instruct"
+        name: "Qwen 2.5 72B Instruct"
+        notes: "Qwen 2.5 flagship dense model"
+
+      - repo_id: "Qwen/Qwen2.5-32B-Instruct"
+        name: "Qwen 2.5 32B Instruct"
+        notes: "Qwen 2.5 mid-size"
+
+      - repo_id: "Qwen/Qwen2.5-14B-Instruct"
+        name: "Qwen 2.5 14B Instruct"
+        notes: "Qwen 2.5 mid-size"
+
+      - repo_id: "Qwen/Qwen2.5-7B-Instruct"
+        name: "Qwen 2.5 7B Instruct"
+        notes: "Qwen 2.5 compact"
+
+      # --- Google ---
+      - repo_id: "google/gemma-3-27b-it"
+        name: "Gemma 3 27B IT"
+        notes: "Google Gemma 3 instruction-tuned 27B"
+
+      - repo_id: "google/gemma-3-12b-it"
+        name: "Gemma 3 12B IT"
+        notes: "Google Gemma 3 instruction-tuned 12B"
+
+      - repo_id: "google/gemma-3-4b-it"
+        name: "Gemma 3 4B IT"
+        notes: "Google Gemma 3 instruction-tuned 4B"
+
+      - repo_id: "google/gemma-3-1b-it"
+        name: "Gemma 3 1B IT"
+        notes: "Google Gemma 3 smallest instruction-tuned"
+
+      - repo_id: "google/gemma-2-27b-it"
+        name: "Gemma 2 27B IT"
+        notes: "Google Gemma 2 instruction-tuned 27B"
+
+      - repo_id: "google/gemma-2-9b-it"
+        name: "Gemma 2 9B IT"
+        notes: "Google Gemma 2 instruction-tuned 9B"
+
+      # --- Microsoft ---
+      - repo_id: "microsoft/phi-4"
+        name: "Phi-4"
+        notes: "14B reasoning-focused model"
+
+      - repo_id: "microsoft/Phi-3.5-mini-instruct"
+        name: "Phi-3.5 Mini Instruct"
+        notes: "3.8B lightweight model"
+
+      - repo_id: "microsoft/Phi-3-medium-128k-instruct"
+        name: "Phi-3 Medium 128K Instruct"
+        notes: "14B with 128K context"
+
+      # --- DeepSeek ---
+      - repo_id: "deepseek-ai/DeepSeek-V3-0324"
+        name: "DeepSeek V3"
+        notes: "671B MoE flagship model"
+
+      - repo_id: "deepseek-ai/DeepSeek-R1"
+        name: "DeepSeek R1"
+        notes: "Reasoning model with chain-of-thought"
+
+      - repo_id: "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
+        name: "DeepSeek R1 Distill Qwen 32B"
+        notes: "Distilled reasoning model on Qwen 32B base"
+
+      - repo_id: "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+        name: "DeepSeek R1 Distill Llama 70B"
+        notes: "Distilled reasoning model on Llama 70B base"
+
+      # --- Cohere ---
+      - repo_id: "CohereForAI/c4ai-command-r-plus-08-2024"
+        name: "Command R+ (Aug 2024)"
+        notes: "104B RAG-optimized model"
+
+      - repo_id: "CohereForAI/c4ai-command-r-08-2024"
+        name: "Command R (Aug 2024)"
+        notes: "35B RAG-optimized model"
+
+      - repo_id: "CohereForAI/aya-expanse-32b"
+        name: "Aya Expanse 32B"
+        notes: "Multilingual 32B model (23 languages)"
+
+      # --- NVIDIA ---
+      - repo_id: "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF"
+        name: "Nemotron 70B Instruct"
+        notes: "NVIDIA-tuned Llama 3.1 70B"
+
+      # --- Falcon (TII) ---
+      - repo_id: "tiiuae/Falcon3-10B-Instruct"
+        name: "Falcon 3 10B Instruct"
+        notes: "TII Falcon 3 instruction-tuned 10B"
+
+      - repo_id: "tiiuae/falcon-40b-instruct"
+        name: "Falcon 40B Instruct"
+        notes: "TII Falcon 40B instruction-tuned"
+
+      # --- EleutherAI ---
+      - repo_id: "EleutherAI/gpt-neox-20b"
+        name: "GPT-NeoX 20B"
+        notes: "Open-source autoregressive 20B"
+
+      # --- BigScience ---
+      - repo_id: "bigscience/bloom"
+        name: "BLOOM 176B"
+        notes: "176B multilingual open model"
+
+      - repo_id: "bigscience/bloomz-7b1"
+        name: "BLOOMZ 7B1"
+        notes: "Instruction-tuned multilingual 7B"
+
+      # --- AI21 ---
+      - repo_id: "ai21labs/AI21-Jamba-1.5-Large"
+        name: "Jamba 1.5 Large"
+        notes: "94B hybrid SSM-Transformer model"
+
+      - repo_id: "ai21labs/AI21-Jamba-1.5-Mini"
+        name: "Jamba 1.5 Mini"
+        notes: "12B hybrid SSM-Transformer model"
+
+  # ---------------------------------------------------------------------------
+  # Code Generation Models
+  # ---------------------------------------------------------------------------
+  code:
+    label: "Code Generation"
+    description: "Models specialized for code generation, completion, and understanding"
+    models:
+      - repo_id: "Qwen/Qwen2.5-Coder-32B-Instruct"
+        name: "Qwen 2.5 Coder 32B Instruct"
+        notes: "Leading open-source code model"
+
+      - repo_id: "Qwen/Qwen2.5-Coder-7B-Instruct"
+        name: "Qwen 2.5 Coder 7B Instruct"
+        notes: "Compact code-specialized Qwen"
+
+      - repo_id: "meta-llama/CodeLlama-70b-Instruct-hf"
+        name: "Code Llama 70B Instruct"
+        notes: "Meta's largest code model"
+
+      - repo_id: "meta-llama/CodeLlama-34b-Instruct-hf"
+        name: "Code Llama 34B Instruct"
+        notes: "Code Llama mid-size"
+
+      - repo_id: "bigcode/starcoder2-15b"
+        name: "StarCoder2 15B"
+        notes: "BigCode open code model"
+
+      - repo_id: "bigcode/starcoder2-7b"
+        name: "StarCoder2 7B"
+        notes: "BigCode compact code model"
+
+      - repo_id: "bigcode/starcoder2-3b"
+        name: "StarCoder2 3B"
+        notes: "BigCode lightweight code model"
+
+      - repo_id: "deepseek-ai/DeepSeek-Coder-V2-Instruct"
+        name: "DeepSeek Coder V2 Instruct"
+        notes: "236B MoE code model"
+
+      - repo_id: "microsoft/phi-4-reasoning"
+        name: "Phi-4 Reasoning"
+        notes: "Phi-4 optimized for code reasoning"
+
+  # ---------------------------------------------------------------------------
+  # Vision & Image Generation Models
+  # ---------------------------------------------------------------------------
+  vision:
+    label: "Vision & Image Generation"
+    description: "Image generation, editing, and visual understanding models"
+    models:
+      # --- Stable Diffusion ---
+      - repo_id: "stabilityai/stable-diffusion-xl-base-1.0"
+        name: "SDXL Base 1.0"
+        notes: "Stability AI flagship image generation"
+
+      - repo_id: "stabilityai/stable-diffusion-3.5-large"
+        name: "SD 3.5 Large"
+        notes: "Latest Stable Diffusion architecture"
+
+      - repo_id: "stabilityai/stable-diffusion-3.5-medium"
+        name: "SD 3.5 Medium"
+        notes: "Medium-size SD3.5"
+
+      - repo_id: "stabilityai/sdxl-turbo"
+        name: "SDXL Turbo"
+        notes: "Fast single-step SDXL variant"
+
+      # --- FLUX ---
+      - repo_id: "black-forest-labs/FLUX.1-dev"
+        name: "FLUX.1 Dev"
+        notes: "Black Forest Labs text-to-image"
+
+      - repo_id: "black-forest-labs/FLUX.1-schnell"
+        name: "FLUX.1 Schnell"
+        notes: "Fast FLUX variant"
+
+      # --- Other Vision ---
+      - repo_id: "stabilityai/stable-video-diffusion-img2vid-xt"
+        name: "Stable Video Diffusion"
+        notes: "Image-to-video generation"
+
+      - repo_id: "google/paligemma2-10b-pt-896"
+        name: "PaliGemma 2 10B"
+        notes: "Google vision-language model"
+
+  # ---------------------------------------------------------------------------
+  # Multimodal Models
+  # ---------------------------------------------------------------------------
+  multimodal:
+    label: "Multimodal"
+    description: "Models that process both text and images (vision-language)"
+    models:
+      - repo_id: "meta-llama/Llama-3.2-11B-Vision-Instruct"
+        name: "Llama 3.2 11B Vision Instruct"
+        notes: "Llama multimodal — text + image"
+
+      - repo_id: "meta-llama/Llama-3.2-90B-Vision-Instruct"
+        name: "Llama 3.2 90B Vision Instruct"
+        notes: "Largest Llama vision model"
+
+      - repo_id: "Qwen/Qwen2.5-VL-72B-Instruct"
+        name: "Qwen 2.5 VL 72B Instruct"
+        notes: "Qwen vision-language flagship"
+
+      - repo_id: "Qwen/Qwen2.5-VL-7B-Instruct"
+        name: "Qwen 2.5 VL 7B Instruct"
+        notes: "Qwen vision-language compact"
+
+      - repo_id: "Qwen/Qwen2.5-VL-3B-Instruct"
+        name: "Qwen 2.5 VL 3B Instruct"
+        notes: "Qwen vision-language lightweight"
+
+      - repo_id: "google/gemma-3-27b-it"
+        name: "Gemma 3 27B (Multimodal)"
+        notes: "Gemma 3 supports image understanding natively"
+
+      - repo_id: "microsoft/Phi-3.5-vision-instruct"
+        name: "Phi-3.5 Vision Instruct"
+        notes: "Lightweight multimodal model"
+
+      - repo_id: "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
+        name: "Mistral Small 3.1 24B Vision"
+        notes: "Mistral vision-language model"
+
+      - repo_id: "deepseek-ai/deepseek-vl2"
+        name: "DeepSeek VL2"
+        notes: "DeepSeek vision-language MoE model"
+
+  # ---------------------------------------------------------------------------
+  # Embedding Models
+  # ---------------------------------------------------------------------------
+  embedding:
+    label: "Embedding Models"
+    description: "Text embedding models for retrieval, similarity, and RAG pipelines"
+    models:
+      - repo_id: "BAAI/bge-en-icl"
+        name: "BGE-en-ICL"
+        notes: "BAAI in-context learning embeddings"
+
+      - repo_id: "BAAI/bge-large-en-v1.5"
+        name: "BGE Large EN v1.5"
+        notes: "High-quality English embeddings"
+
+      - repo_id: "BAAI/bge-m3"
+        name: "BGE-M3"
+        notes: "Multi-lingual, multi-granularity embeddings"
+
+      - repo_id: "sentence-transformers/all-MiniLM-L6-v2"
+        name: "all-MiniLM-L6-v2"
+        notes: "Popular lightweight sentence embeddings"
+
+      - repo_id: "sentence-transformers/all-mpnet-base-v2"
+        name: "all-mpnet-base-v2"
+        notes: "High-quality sentence embeddings"
+
+      - repo_id: "Alibaba-NLP/gte-Qwen2-7B-instruct"
+        name: "GTE-Qwen2-7B-Instruct"
+        notes: "Alibaba large-scale embedding model"
+
+      - repo_id: "Alibaba-NLP/gte-large-en-v1.5"
+        name: "GTE Large EN v1.5"
+        notes: "Alibaba English embedding model"
+
+      - repo_id: "jinaai/jina-embeddings-v3"
+        name: "Jina Embeddings v3"
+        notes: "Multilingual embedding model"
+
+      - repo_id: "nomic-ai/nomic-embed-text-v1.5"
+        name: "Nomic Embed Text v1.5"
+        notes: "Open-source long-context embeddings"
+
+      - repo_id: "intfloat/e5-mistral-7b-instruct"
+        name: "E5-Mistral-7B-Instruct"
+        notes: "LLM-based embedding model"
+
+      - repo_id: "intfloat/multilingual-e5-large-instruct"
+        name: "Multilingual E5 Large Instruct"
+        notes: "Multilingual embedding model"
+
+  # ---------------------------------------------------------------------------
+  # Audio & Speech Models
+  # ---------------------------------------------------------------------------
+  audio:
+    label: "Audio & Speech"
+    description: "Speech recognition, text-to-speech, and audio processing models"
+    models:
+      - repo_id: "openai/whisper-large-v3-turbo"
+        name: "Whisper Large v3 Turbo"
+        notes: "OpenAI fast speech recognition"
+
+      - repo_id: "openai/whisper-large-v3"
+        name: "Whisper Large v3"
+        notes: "OpenAI speech recognition flagship"
+
+      - repo_id: "openai/whisper-medium"
+        name: "Whisper Medium"
+        notes: "OpenAI mid-size speech recognition"
+
+      - repo_id: "facebook/seamless-m4t-v2-large"
+        name: "SeamlessM4T v2 Large"
+        notes: "Meta multilingual speech translation"
+
+      - repo_id: "microsoft/speecht5_tts"
+        name: "SpeechT5 TTS"
+        notes: "Microsoft text-to-speech"
+
+      - repo_id: "parler-tts/parler-tts-large-v1"
+        name: "Parler TTS Large v1"
+        notes: "Descriptive text-to-speech"
+
+      - repo_id: "Systran/faster-whisper-large-v3"
+        name: "Faster Whisper Large v3"
+        notes: "CTranslate2-optimized Whisper"
+
+  # ---------------------------------------------------------------------------
+  # Reranker & Retrieval Models
+  # ---------------------------------------------------------------------------
+  reranker:
+    label: "Rerankers & Retrieval"
+    description: "Cross-encoder rerankers and retrieval-optimized models"
+    models:
+      - repo_id: "BAAI/bge-reranker-v2-m3"
+        name: "BGE Reranker v2 M3"
+        notes: "BAAI multilingual reranker"
+
+      - repo_id: "BAAI/bge-reranker-large"
+        name: "BGE Reranker Large"
+        notes: "BAAI cross-encoder reranker"
+
+      - repo_id: "jinaai/jina-reranker-v2-base-multilingual"
+        name: "Jina Reranker v2 Base"
+        notes: "Multilingual reranker"
+
+      - repo_id: "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        name: "MS MARCO MiniLM L-12 v2"
+        notes: "Classic MS MARCO cross-encoder"
+
+  # ---------------------------------------------------------------------------
+  # Math & Reasoning Models
+  # ---------------------------------------------------------------------------
+  reasoning:
+    label: "Math & Reasoning"
+    description: "Models specialized for mathematical reasoning and problem solving"
+    models:
+      - repo_id: "Qwen/QwQ-32B"
+        name: "QwQ 32B"
+        notes: "Qwen reasoning model with chain-of-thought"
+
+      - repo_id: "Qwen/Qwen2.5-Math-72B-Instruct"
+        name: "Qwen 2.5 Math 72B Instruct"
+        notes: "Math-specialized Qwen"
+
+      - repo_id: "Qwen/Qwen2.5-Math-7B-Instruct"
+        name: "Qwen 2.5 Math 7B Instruct"
+        notes: "Compact math-specialized Qwen"
+
+      - repo_id: "deepseek-ai/DeepSeek-R1"
+        name: "DeepSeek R1"
+        notes: "Reasoning-focused with extended thinking"
+
+      - repo_id: "microsoft/phi-4-reasoning"
+        name: "Phi-4 Reasoning"
+        notes: "Microsoft reasoning-optimized model"
